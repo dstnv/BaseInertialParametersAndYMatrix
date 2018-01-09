@@ -1,5 +1,5 @@
 % This Code finds the base/minimal inertial parameters (usually denoted \Theta) of a
-% rational link manipulator and its Dynamic Matrix Y(q,dq,ddq)
+% serial link manipulator and its Dynamic Matrix Y(q,dq,ddq)
 % M(q)*ddq+C(q,dq)*dq+g(q)=Y(q,dq,ddq)*\Theta
 % Y(q,dq,ddq)*\Theta=Y_M(q)*ddq+Y_B(q)*[dq.^2]+Y_C(q)*[dqdq]+Y_G(q)
 % The method in Gautier, Khalil paper, on minimal inertial parameters, % 1990, is implemented.
