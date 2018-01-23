@@ -8,10 +8,10 @@ joint_type=[1;1;1;1;1;1;1]; % type of joint, 1 means revolute and 0 means prisma
 N=7; % Number of joints
 ValidateDH(RobotName,alpha,a,d,theta,joint_type,N,mfilename,[]);
 
-% Physical parameters: center of mass, link inertia matrix, link mass
+% Physical parameters: link mass, center of mass, link inertia matrix
 m=sym(zeros(1,N));
-iPci=sym(zeros(3,N));
-ciIi=sym(zeros(3,3,N));
+iPci=sym(zeros(3,N)); % center of mass with respect to coordinate i
+ciIi=sym(zeros(3,3,N)); % link inertia with respect to center of mass of link i
 for i=1:N
     m(i)=sym(['mG' num2str(i)],'real');
     iPci(:,i)=[sym(['mXG' num2str(i)],'real');sym(['mYG' num2str(i)],'real');sym(['mZG' num2str(i)],'real')];
