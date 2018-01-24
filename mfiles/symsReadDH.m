@@ -1,4 +1,4 @@
-% Reads a Set of Denavit-Hartenberg parameters
+% Reads a set of modified Denavit-Hartenberg parameters
 function symsReadDH(RobotData)
 
 % -------
