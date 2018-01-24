@@ -12,9 +12,8 @@ M(q)*ddq+C(q,dq)*dq+g(q)=Y(q,dq,ddq)*Theta
 ```
 
 ### Example 1
------
 
-`RobotTemplate.m` gives a generic symbolic template for entering robot parameters. The template is adjusted based on the DH parameters and physical parameters. An example is KUKA4Symbolic.m file. It is the template modified for KUKA LWR IV+, by setting the DH-parameters. The zero terms of the link inertia matrix, due to symmetry, are also specified.
+`RobotTemplate.m` gives a generic symbolic template for entering robot parameters. The template is adjusted based on the DH parameters and physical parameters. Modified DH parameters are used. An example is KUKA4Symbolic.m file. It is the template modified for KUKA LWR IV+, by setting the DH-parameters. The zero terms of the link inertia matrix, due to symmetry, are also specified.
 
 Calling `BaseRobotics`, the input prompt asks for selecting from a list of robots. By entering `KUKA4Symbolic.m` at the prompt, `BaseRobotics` reads the parameters for KUKA LWR IV+, and calculates the base parameters and the dynamic matrix.
 ```
@@ -74,6 +73,8 @@ It is not efficient to print large symbolic variables such as `Y` or `TauDynamic
 -----
 
 Calling `BaseRobotics` lists the robots described in `symsReadDH.m` and `symsReadSpecs.m`. The DH parameters are read from `symsReadDH.m`. The physical parameters are read from `symsReadSpecs.m`. The format for DH and physical parameters is consistent with `RobotTemplate.m`, and same as in example 1.
+
+
 ```
 >> BaseRobotics
     [1]    'Planar1D'  
@@ -84,5 +85,26 @@ Calling `BaseRobotics` lists the robots described in `symsReadDH.m` and `symsRea
 Enter Robot # or Name:
 ```
 
+`symsReadDH.m` and `symsReadSpecs.m` contain the parameters of a few robots. `Planar2D` is given by:
 
+```
+% symsReadDH.m, Modified DH parameters:
+RobotName = 'Planar2D'; % Type: Character Array
+alpha = [0;0]*pi/180;
+a = [0;sym('l1','real')];
+d = [0;0];
+theta=[0;0]*pi/180;
+joint_type=[1;1]; 
+N = 2;
+```
+```
+% symsReadSpecs.m:
+RobotName = 'Planar2D'; % Type: Character Array
+m = [sym('m1','real'),sym('m2','real')];
+iPci=[sym('lc1','real'),0,0;sym('lc2','real'),0,0].';
+ciIi(:,:,1)=[0,0,0;0,0,0;0,0,sym('I1','real')];
+ciIi(:,:,2)=[0,0,0;0,0,0;0,0,sym('I2','real')];
+g=sym('g','real');
+
+```
 
