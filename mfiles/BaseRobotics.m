@@ -6,7 +6,7 @@
 
 % Note: Suppress displays of program outputs if you have too many joints to avoid possible slowdown.
 % Note: Code was last tested on MATLAB 2015b
-% Contact D.Sotoude, sotoude.dv@gmail.com
+% Contact D.Sotoude, sotou.dn@gmail.com
 
 function BaseRobotics()
 
