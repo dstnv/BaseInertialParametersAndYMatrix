@@ -1,4 +1,4 @@
-% Denavit-Hartenberg parameters
+% Modified Denavit-Hartenberg parameters
 RobotName = 'KUKA4Symbolic';
 alpha=  [0  ;90  ;-90    ;-90   ;90    ;90    ;-90]*pi/180; % add a zero at the end
 a=      [0  ;0   ;0      ;0     ;0     ;0     ;0]; % add a zero at the end
