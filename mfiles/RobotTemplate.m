@@ -1,4 +1,4 @@
-% Denavit-Hartenberg parameters
+% Modified Denavit-Hartenberg parameters
 RobotName = 'RobotTemplate';
 N=12; % Number of joints
 alpha = sym('alpha', [N 1]); % In radians
