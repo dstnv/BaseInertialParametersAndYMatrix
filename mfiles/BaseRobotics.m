@@ -2,7 +2,8 @@
 % serial link manipulator and its Dynamic Matrix Y(q,dq,ddq)
 % M(q)*ddq+C(q,dq)*dq+g(q)=Y(q,dq,ddq)*\Theta
 % Y(q,dq,ddq)*\Theta=Y_M(q)*ddq+Y_B(q)*[dq.^2]+Y_C(q)*[dqdq]+Y_G(q)
-% The method in Gautier, Khalil paper, on minimal inertial parameters, % 1990, is implemented.
+% The method in Gautier, Khalil paper, a direct determination of minimum 
+% inertial parameters of robots, 1988, is implemented.
 
 % Note: Suppress displays of program outputs if you have too many joints to avoid possible slowdown.
 % Note: Code was last tested on MATLAB 2015b
